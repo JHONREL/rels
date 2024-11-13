@@ -8,7 +8,7 @@ set_time_limit(1000);
 
 //DEFINE CONSTANT SERVER VARIABLES
 define("SERVER", "localhost");
-define("DATABASE", "devlog_database");
+define("DATABASE", "rels_database");
 define("USER", "root");
 define("PASSWORD", "");
 define("DRIVER", "mysql");

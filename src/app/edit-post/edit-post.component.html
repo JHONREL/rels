@@ -1,9 +1,6 @@
 <app-homepage-navbar></app-homepage-navbar>
 <div class="page-wrapper">
   <div class="form-container">
-    <h1 class="page-title">Start Crafting Your Story</h1>
-
-    <!-- Title Section -->
     <form [formGroup]="form">
       <!-- Title Section -->
       <div class="form-group">
@@ -47,7 +44,6 @@
         >
         </quill-editor>
       </div>
-
       <!-- Submit Button -->
       <div class="form-actions">
         <button class="submit-btn" (click)="updatePost()">Publish Post</button>

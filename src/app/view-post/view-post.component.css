@@ -85,8 +85,9 @@
   font-size: 1.1em;
   line-height: 1.5em;
   color: #333;
+  word-break: break-word; /* Breaks long words to fit within the container */
+  overflow-wrap: break-word; /* Adds additional wrapping support */
 }
-
 .name-details {
   color: rgb(21, 21, 21);
   margin-right: auto;

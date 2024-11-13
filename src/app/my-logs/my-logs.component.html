@@ -1,6 +1,29 @@
 <div *ngIf="loading == false">
   <app-homepage-navbar></app-homepage-navbar>
   <div class="body">
+    <div class="bio">
+      <div class="infos">
+        <img
+          *ngIf="!user[0].profilephoto"
+          class="default"
+          (click)="changeCoverPhoto()"
+          src="assets/image.png"
+        />
+        <img
+          *ngIf="user[0].profilephoto"
+          src="http://localhost/rels/pdo/images/users/{{
+            user[0].profilephoto
+          }}"
+          (click)="changeCoverPhoto()"
+          id="profilePhoto"
+        />
+      </div>
+      <div class="inputb">
+        <div class="name">
+          <h3>{{ user[0].username }}</h3>
+        </div>
+      </div>
+    </div>
     <div class="cards">
       <div
         class="system"
@@ -43,9 +66,9 @@
           <div class="title">
             <h4>{{ post.title }}</h4>
           </div>
-  
+
           <div class="descri" [innerHTML]="[post.description]"></div>
-  
+
           <div class="actions">
             <div class="action-button">
               <i class="bx bx-show"></i>{{ post.views }} Views
@@ -58,9 +81,9 @@
       </div>
     </div>
   </div>
-  
 </div>
 <div class="editor" (click)="createPost()">
   <button class="editor-i">
-    <i class="bx bx-edit-alt"></i>
+    <i class="bx bxs-edit-alt"></i>
   </button>
+</div>

@@ -5,13 +5,12 @@
       class="system"
       (click)="viewPost(post.postid)"
       *ngFor="let post of posts"
-      click
     >
       <div class="right">
         <div class="header" *ngIf="post.photo">
           <img
             src="http://localhost/rels/pdo/images/posts/{{ post.photo }}"
-            alt="tempo"
+            alt="Post Image"
           />
         </div>
       </div>
@@ -30,6 +29,7 @@
                 profilePhotos[post.userid]
               "
               *ngIf="profilePhotos[post.userid]"
+              alt="User Photo"
             />
           </div>
           <div class="text">
@@ -42,14 +42,12 @@
         <div class="title">
           <h4>{{ post.title }}</h4>
         </div>
-
         <div class="descri" [innerHTML]="[post.description]"></div>
-
         <div class="actions">
           <div class="action-button">
-            <i class="bx bx-show"></i>{{ post.views }} Views
+            <i class="bx bx-show"></i>{{ post.views }} views
           </div>
-          <div class="action-button comment">
+          <div class="action-button-comment">
             <i class="bx bx-comment"></i> Comments
           </div>
         </div>

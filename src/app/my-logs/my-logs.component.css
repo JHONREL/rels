@@ -1,33 +1,93 @@
 .body {
-  height: 90vh;
-  width: auto;
-  justify-content: space-between;
-  background-color: #fff;
-  align-items: center;
-  overflow-y: auto;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f6fcdf;
+  padding: 20px;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.label {
-  height: 8vh;
+/* Bio section */
+.bio {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 20px;
+  background-color: #f6fcdf;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
 }
 
-.default {
-  background-color: #666;
+.infos {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
 }
 
-/*BLOG CARDS*/
+.infos img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #31511e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.infos img:hover {
+  transform: scale(1.05);
+}
+
+.inputb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #31511e;
+  margin: 0;
+  text-align: left;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .bio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .infos {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .name h3 {
+    font-size: 1.3em;
+  }
+}
+
+/* Card container */
 .cards {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   width: 100%;
+  max-width: 1000px;
 }
 
+/* Individual card styling */
 .system {
   background-color: #fff;
   border-radius: 10px;
@@ -38,7 +98,7 @@
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   transition: transform 0.2s, box-shadow 0.2s;
   gap: 20px;
@@ -49,15 +109,12 @@
   flex: 1;
 }
 
-.right {
-  flex-shrink: 0;
-}
-
 .system:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Content inside the card */
 .text-content {
   flex: 1;
   padding-right: 20px;
@@ -100,31 +157,33 @@
   font-size: 0.8em;
 }
 
+.right {
+  flex-shrink: 0;
+}
+
 .header {
   width: 150px;
-  margin-top: 45%;
+  margin-top: auto;
 }
 
 .header img {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
-  max-height: 150px;
 }
 
 .actions {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: start;
-  margin-top: auto;
+  align-items: center;
   font-size: 0.9em;
   color: #31511e;
-  gap: 15px; /* Add some gap between the items */
-  flex-wrap: wrap; /* Allow the items to wrap if needed */
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.action-button {
+.action-button,
+.action-button-comment {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -132,30 +191,31 @@
   transition: color 0.2s;
 }
 
-.action-button:hover {
+.action-button:hover,
+.action-button-comment:hover {
   color: #1a3b1d;
 }
 
-.action-button i {
+.action-button i,
+.action-button-comment i {
   font-size: 1.1em;
 }
 
-
-/* BUTTON FOR CREATE BLOG */
+/* Floating editor button */
 .editor {
   text-align: center;
   position: fixed;
   bottom: 10%;
   right: 2%;
-  background-color: #31511e;
   border-radius: 30px;
   padding: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Icon styling */
 .editor-i {
   background-color: transparent;
-  color: #f6fcdf;
+  color: #1a3b1d;
   text-align: center;
   display: inline-block;
   font-size: 24px;
@@ -165,8 +225,9 @@
   border-radius: 50%;
 }
 
+/* Hover effect */
 .editor-i:hover {
   transform: scale(1.1);
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.8); /* FADING */
+  background-color: rgba(49, 81, 30, 0.2);
+  color: #31511e;
 }
