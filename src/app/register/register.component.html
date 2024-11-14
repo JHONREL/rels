@@ -1,0 +1,86 @@
+<app-navbar></app-navbar>
+<div class="body">
+  <div class="main">
+    <div class="intro">
+      <h1>Sign up</h1>
+    </div>
+    <form (ngSubmit)="signup()" [formGroup]="signupForm">
+      <div class="text">
+        <div class="up">
+          <div class="first">
+            <i class="bx bx-user-circle"></i>
+            <input
+              type="text"
+              formControlName="firstName"
+              placeholder="First name"
+              required
+            />
+          </div>
+          <div class="last">
+            <i class="bx bx-user-circle"></i>
+            <input
+              type="text"
+              formControlName="lastName"
+              placeholder="Last name"
+              required
+            />
+          </div>
+        </div>
+        <div class="mid">
+          <div class="email">
+            <i class="bx bxl-gmail"></i>
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="example@example.com"
+              required
+            />
+          </div>
+          <div class="usern">
+            <i class="bx bx-user-circle"></i>
+            <input
+              type="text"
+              formControlName="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+        </div>
+        <div class="low">
+          <div class="pass">
+            <i class="bx bx-lock-alt"></i>
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="confp">
+            <i class="bx bx-lock-alt"></i>
+            <input
+              type="password"
+              formControlName="confirmPassword"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="check">
+        <div class="bot">
+          <button
+            type="submit"
+            id="login-button"
+            [disabled]="!signupForm.valid"
+          >
+            Sign up
+          </button>
+        </div>
+        <div class="login">
+          <p>Already have an Account? <a href="#">Login</a></p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

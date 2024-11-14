@@ -1,0 +1,125 @@
+<div *ngIf="loaded == true">
+  <app-homepage-navbar></app-homepage-navbar>
+  <div class="body">
+    <div class="container">
+      <div class="post">
+        <div class="name">
+          <div class="profile-picture">
+            <img
+              *ngIf="!author[0].profilephoto"
+              class="default"
+              src="assets/logoo.png"
+            />
+            <img
+              *ngIf="author[0].profilephoto"
+              src="http://localhost/rels/pdo/images/users/{{
+                author[0].profilephoto
+              }}"
+              alt="Main Logo"
+            />
+          </div>
+          <div class="name-details">
+            <h4 (click)="navigateToUser(post[0].userid)">
+              {{ post[0].username }}
+            </h4>
+            <p>{{ formatSqlDate(post[0].created_at) }}</p>
+          </div>
+
+          <div class="options-menu" [ngClass]="{ show: showOptions }">
+            <button
+              class="options-button"
+              (click)="toggleOptions()"
+              *ngIf="author[0].userid == user[0].userid"
+            >
+              ...
+            </button>
+            <div class="options-dropdown" *ngIf="showOptions">
+              <a (click)="editPost()">Edit</a>
+              <a (click)="deletePost()">Delete</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="title">
+          <h3>{{ post[0].title }}</h3>
+        </div>
+
+        <div class="back" *ngIf="post[0].photo">
+          <div class="image">
+            <img
+              src="http://localhost/rels/pdo/images/posts/{{ post[0].photo }}"
+              alt="Main Logo"
+            />
+          </div>
+        </div>
+        <div class="description" [innerHTML]="post[0].description"></div>
+        <div class="actions">
+          <div class="action-button">
+            <i class="bx bx-show"></i>{{ post[0].views }} Views
+          </div>
+          <div class="action-button">
+            <i class="bx bx-comment"></i> Comments
+          </div>
+        </div>
+
+        <h4>Comments</h4>
+        <div class="comments">
+          <div class="comment" *ngFor="let comment of commentList">
+            <div class="comment-user">
+              <img
+                *ngIf="!comment.profilephoto"
+                class="default"
+                src="assets/logoo.png"
+              />
+              <img
+                *ngIf="comment.profilephoto"
+                src="http://localhost/rels/pdo/images/users/{{
+                  comment.profilephoto
+                }}"
+                alt="Main Logo"
+              />
+              <div class="comment-right">
+                <span
+                  class="comment-author"
+                  (click)="navigateToUser(comment.userid)"
+                  >{{ comment.username }}</span
+                >
+                <div class="comment-text">
+                  <p>{{ comment.comment }}</p>
+                </div>
+                <span class="comment-date">{{ comment.date }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comment-input-container">
+          <div class="profile-pic">
+            <img
+              *ngIf="!user[0].profilephoto"
+              class="default"
+              src="/assets/logoo.png"
+            />
+            <img
+              *ngIf="user[0].profilephoto"
+              src="http://localhost/rels/pdo/images/users/{{
+                user[0].profilephoto
+              }}"
+              alt="Main Logo"
+            />
+          </div>
+          <div class="comment-input">
+            <input
+              type="text"
+              id="commentInput"
+              placeholder="Add a comment"
+              [(ngModel)]="comment"
+            />
+            <label for="commentInput" (click)="createComment()">
+              <i class="bx bx-up-arrow-alt"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

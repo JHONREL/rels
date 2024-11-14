@@ -1,0 +1,149 @@
+.body {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/assets/background.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+}
+
+.main {
+  background-color: #ededed;
+  height: 60vh;
+  width: 55%;
+  border-radius: 20px;
+  border: 4px solid #31511e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.intro {
+  font-size: large;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.intro h1 {
+  color: #31511e;
+}
+
+.text {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.up,
+.mid,
+.low {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+  width: 95%;
+}
+
+.first,
+.last,
+.email,
+.usern,
+.pass,
+.confp {
+  position: relative;
+  width: 45%;
+}
+
+.first input,
+.last input,
+.email input,
+.usern input,
+.pass input,
+.confp input {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid #31511e;
+  padding: 5px;
+  padding-left: 35px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #859f3d;
+}
+.check {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 30px;
+}
+.bot {
+  margin-bottom: 25px;
+}
+
+.bot button {
+  width: 150px;
+  height: 40px;
+  background-color: #31511e;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.bot button:hover {
+  background-color: #859f3d;
+  transform: translateY(-2px);
+}
+
+.bot button:active {
+  background-color: #859f3d;
+  transform: translateY(0);
+}
+
+.login p {
+  margin-top: 10px;
+}
+
+.login a {
+  color: #859f3d;
+  text-decoration: none;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}
+
+.text:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.text input:hover {
+  border-color: #008080;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+i:hover {
+  color: #005f5f;
+}

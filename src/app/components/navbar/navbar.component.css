@@ -1,0 +1,40 @@
+.bar {
+  background-color: #1a1a19;
+  padding: 20px;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  width: 60px;
+  height: 60px;
+}
+
+.left img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.right {
+  display: flex;
+  gap: 70px;
+}
+
+.right a {
+  text-decoration: none;
+  color: #f6fcdf;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.right a:hover {
+  color: #859f3d;
+}
+
+.router-link-active {
+  border-bottom: 2px solid #859f3d;
+}

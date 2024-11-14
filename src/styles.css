@@ -1,0 +1,44 @@
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import "../node_modules/quill/dist/quill.core.css";
+@import "../node_modules/quill/dist/quill.bubble.css";
+@import "../node_modules/quill/dist/quill.snow.css";
+* {
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Jost", sans-serif;
+}
+
+.post .description p {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.post .description p img {
+  width: 60%;
+  justify-self: center;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.system .descri {
+  padding: 3px 0px;
+  overflow: hidden;
+}
+.system .descri img {
+  display: none;
+}

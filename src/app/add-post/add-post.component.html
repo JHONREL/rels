@@ -1,0 +1,54 @@
+<app-homepage-navbar></app-homepage-navbar>
+<div class="page-wrapper">
+  <div class="form-container">
+    <form [formGroup]="form">
+      <!-- Title Section -->
+      <div class="form-group">
+        <label for="post-title" class="form-label">Blog Title</label>
+        <input
+          type="text"
+          id="post-title"
+          class="form-input"
+          placeholder="Enter your blog title here"
+          formControlName="title"
+        />
+      </div>
+
+      <!-- Image Upload Section -->
+      <div class="form-group">
+        <label class="form-label">Featured Image</label>
+        <div class="image-upload">
+          <div *ngIf="imageUrl" class="image-preview">
+            <img [src]="imageUrl" alt="Image Preview" class="preview-image" />
+          </div>
+          <label for="image-upload" class="upload-button">Upload Image</label>
+          <input
+            id="image-upload"
+            type="file"
+            accept="image/*"
+            class="upload-input"
+            (change)="onFileSelected($event)"
+          />
+        </div>
+      </div>
+
+      <!-- Description Section -->
+      <div class="form-group">
+        <label for="post-description" class="form-label">Content</label>
+        <quill-editor
+          placeholder="Enter Text..."
+          formControlName="text"
+          [modules]="quillConfig"
+          (onBlur)="blur()"
+          (onSelectionChanged)="onSelectionChanged()"
+        >
+        </quill-editor>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button class="submit-btn" (click)="createPost()">Publish Post</button>
+      </div>
+    </form>
+  </div>
+</div>

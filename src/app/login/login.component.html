@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="body">
+  <div class="main">
+    <div class="upper">
+      <img src="assets/logoo.png" alt="logo" />
+      <h1>Login</h1>
+    </div>
+    <div class="mid">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="user">
+          <input
+            type="text"
+            placeholder="Email"
+            formControlName="email"
+            required
+          />
+        </div>
+        <div class="pass">
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+            required
+          />
+        </div>
+        <div class="bottom">
+          <div class="login">
+            <button
+              type="submit"
+              id="login-button"
+              [disabled]="loginForm.invalid"
+            >
+              Log in
+            </button>
+          </div>
+          <div class="signup">
+            <p>Don't have an Account? <a routerLink="/register">Sign up</a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

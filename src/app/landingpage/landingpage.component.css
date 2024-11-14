@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#main{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+#Contai1 {
+    width: 30vw;
+    height: 10vh;
+    background: url('/assets/image.png');
+    position: absolute;
+    bottom: 0px;
+    animation: anim 0.25s forwards, anim2 0.25s forwards 0.25s;
+}
+
+
+#Contai1::after{
+    content: '';
+    position: absolute;
+    width: 30vw;
+    height: 10vh;
+    background-image: url('/assets/img2.png');
+    left: 0px;
+    z-index: -1;
+}
+
+@keyframes anim{
+    from{
+        bottom: -100%;
+    }
+    to{
+        bottom: 10%;
+    }
+}
+
+@keyframes anim2{
+    from{
+        left: 30%;
+        width: 530px;
+    }
+    to{
+        width: 0px;
+        left: 50%;
+    }
+}
+
+#Contai2{
+    width: auto;
+    height: auto;
+    font-size: 7em;
+    font-weight: 600;
+    line-height: 130px;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    align-items: center;
+    
+}
+
+
+#text {
+    position: relative;
+    left: -200%;
+    animation: anim3 0.25s forwards 0.5s;
+}
+.sub-text {
+    color: #415A77; 
+}
+
+.task-text {
+    color: #F6828C;
+}
+
+@keyframes anim3{
+    from{
+        left: -100%;
+    }
+    to{
+        left: 0%;
+    }
+}
+
+#Contai3{
+    overflow: hidden;
+    background-color: #F6828C;
+}
+
+#container{
+    width: 100vw;
+    height: 15vh;
+    position: absolute;  
+    animation: anim4 0.25s forwards 0.5s;
+    background-color: #C2D1D3;
+    padding: 5px;
+}
+
+#logo{
+    float: left;
+    margin-left: 70px;
+    margin-top: 10px;
+    text-decoration: none; 
+    color: inherit;
+    cursor: pointer; 
+}
+
+#logo a {
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer; 
+}
+
+#logo a img{
+    width: auto;
+    height: 95px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#logo img:hover{
+    scale: 110%;
+}
+
+#menu{
+    font-size: 15px;
+    font-weight: bold;
+    color: #415A77;
+    letter-spacing: 2px;
+    margin-right: 80px;
+    margin-top: 20px;
+    float: right;
+    text-transform: uppercase;
+}
+
+#menu ul{
+    list-style: none;
+}
+
+#menu ul li{
+    padding-top: 10px;
+    display: inline-block;
+    margin-left: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#menu ul li:hover{
+    scale: 120%;
+}
+
+#menu a {
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer; 
+}
+
+@keyframes anim4{
+    from{
+        top:  -100%;
+    }
+    to{
+        top:  0%;
+    }
+
+}
+
+hr{
+    position: absolute;
+    top: 0;
+    padding: 50px;
+    border: #415A77 50px;
+}
+
+@media (max-width:770px) {
+    #Contai1{
+        display: none !important;
+    }
+    #Contai2{
+        display: none !important;
+    }
+    #Contai3{
+        all: unset !important;
+        height: 100%;
+        width: 100%;
+    }
+    #container{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+}

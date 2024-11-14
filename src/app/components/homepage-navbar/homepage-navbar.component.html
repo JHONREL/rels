@@ -1,0 +1,21 @@
+<div *ngIf="loading == false">
+  <div class="bar">
+    <div class="left">
+      <img src="assets/logoo.png" alt="Main Logo" />
+    </div>
+    <div class="right">
+      <a [routerLink]="['/homepage']" routerLinkActive="router-link-active"
+        >Home</a
+      >
+      <a
+        [routerLink]="['/logs', user[0].userid]"
+        routerLinkActive="router-link-active"
+      >
+        {{ user[0]!.username }}
+      </a>
+      <a [routerLink]="['']">
+        <i class="bx bx-log-in-circle" (click)="logout()"></i>
+      </a>
+    </div>
+  </div>
+</div>

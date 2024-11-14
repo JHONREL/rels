@@ -1,0 +1,59 @@
+<app-homepage-navbar></app-homepage-navbar>
+<div class="body">
+  <div class="cards">
+    <div
+      class="system"
+      (click)="viewPost(post.postid)"
+      *ngFor="let post of posts"
+      click
+    >
+      <div class="right">
+        <div class="header" *ngIf="post.photo">
+          <img
+            src="http://localhost/rels/pdo/images/posts/{{ post.photo }}"
+            alt="tempo"
+          />
+        </div>
+      </div>
+      <div class="left">
+        <div class="info">
+          <div class="img">
+            <img
+              class="default"
+              src="assets/logoo.png"
+              *ngIf="!profilePhotos[post.userid]"
+              alt="Main Logo"
+            />
+            <img
+              [src]="
+                'http://localhost/rels/pdo/images/users/' +
+                profilePhotos[post.userid]
+              "
+              *ngIf="profilePhotos[post.userid]"
+            />
+          </div>
+          <div class="text">
+            <p>{{ post.username }}</p>
+            <div class="date">
+              <p>{{ formatSqlDate(post.created_at) }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="title">
+          <h4>{{ post.title }}</h4>
+        </div>
+
+        <div class="descri" [innerHTML]="[post.description]"></div>
+
+        <div class="actions">
+          <div class="action-button">
+            <i class="bx bx-show"></i>{{ post.views }} Views
+          </div>
+          <div class="action-button comment">
+            <i class="bx bx-comment"></i> Comments
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

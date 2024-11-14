@@ -1,0 +1,125 @@
+.body {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/assets/background.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+}
+.main {
+  background-color: #ededed;
+  height: 55vh;
+  width: 25%;
+  border-radius: 20px;
+  border: 4px solid #31511e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.upper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #1c1b18;
+}
+.upper h1 {
+  color: #31511e;
+}
+
+.upper img {
+  width: 70px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.mid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.user,
+.pass {
+  width: 105%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-right: 0px;
+}
+
+.user input,
+.pass input {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.user input:hover,
+.pass input:hover {
+  border-color: #859f3d;
+  background-color: #f0f7e6;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.login button {
+  width: 150px;
+  height: 40px;
+  background-color: #31511e;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login button:hover {
+  background-color: #859f3d;
+  transform: translateY(-2px);
+}
+
+.login button:active {
+  background-color: #859f3d;
+  transform: translateY(0);
+}
+.signup p {
+  margin-top: 10px;
+}
+
+.signup a {
+  color: #859f3d;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+.vertical-hr {
+  width: 2px;
+  height: 50px;
+  background-color: #859f3d;
+  border: none;
+  margin: 0 10px;
+}
